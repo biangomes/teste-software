@@ -4,27 +4,27 @@ import java.math.BigDecimal;
 
 public class Lance {
 
-    private BigDecimal valor;
+    private double valor;
     private Leilao leilao;
     private Usuario usuario;
 
     public Lance() {}
 
-    public Lance(BigDecimal valor, Leilao leilao) {
+    public Lance(double valor, Leilao leilao) {
         this.valor = valor;
         this.leilao = leilao;
     }
 
-    public Lance(Usuario usuario, BigDecimal valor) {
+    public Lance(Usuario usuario, double valor) {
         this.usuario = usuario;
         this.valor = valor;
     }
 
-    public void setValor(BigDecimal valor) {
+    public void setValor(double valor) {
         this.valor = valor;
     }
 
-    public BigDecimal getValor() {
+    public double getValor() {
         return this.valor;
     }
 

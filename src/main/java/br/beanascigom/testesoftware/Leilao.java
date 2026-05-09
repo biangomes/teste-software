@@ -12,6 +12,10 @@ public class Leilao {
         this.lances = new ArrayList<>();
     }
 
+    public Leilao(String produto) {
+        this.produto = produto;
+    }
+
     public Leilao(String produto, String descricao, List<Lance> lances) {
         this.produto = produto;
         this.descricao = descricao;
@@ -49,7 +53,10 @@ public class Leilao {
     }
 
     public void propoe(Lance lance) {
-        if (lance != null && lance.getValor() != null) {
+        if (lance != null) {
+            if (this.lances == null) {
+                this.lances = new ArrayList<>();
+            }
             lance.setLeilao(this);
             this.lances.add(lance);
         }

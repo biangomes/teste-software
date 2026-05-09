@@ -3,23 +3,25 @@ package br.beanascigom.testesoftware;
 import java.math.BigDecimal;
 
 public class Avaliador {
-    private BigDecimal maiorDeTodos = BigDecimal.ZERO;
+    private double maiorDeTodos = Double.NEGATIVE_INFINITY;
+    private double menorDeTodos = Double.POSITIVE_INFINITY;
 
     public void avalia(Leilao leilao) {
-        if (leilao == null || leilao.getLances() == null || leilao.getLances().isEmpty()) {
-            throw new IllegalArgumentException("Leilao sem lances para avaliacao");
-        }
-
-        this.maiorDeTodos = BigDecimal.ZERO;
-
         for (Lance lance : leilao.getLances()) {
-            if (lance != null && lance.getValor() != null && lance.getValor().compareTo(this.maiorDeTodos) > 0) {
-                this.maiorDeTodos = lance.getValor();
+            if (lance.getValor() > maiorDeTodos) {
+                maiorDeTodos = lance.getValor();
+            }
+            if (lance.getValor() < menorDeTodos || menorDeTodos == 0.00) {
+                menorDeTodos = lance.getValor();
             }
         }
     }
 
-    public BigDecimal getMaiorLance() {
+    public double getMaiorLance() {
         return this.maiorDeTodos;
+    }
+
+    public double getMenorLance() {
+        return this.menorDeTodos;
     }
 }

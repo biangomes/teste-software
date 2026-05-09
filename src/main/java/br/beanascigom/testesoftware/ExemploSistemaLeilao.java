@@ -9,9 +9,9 @@ public class ExemploSistemaLeilao {
         Usuario joao = new Usuario("Joao");
 
         Leilao leilao = new Leilao("Notebook", "Notebook gamer em bom estado");
-        leilao.propoe(new Lance(maria, new BigDecimal("1500.00")));
-        leilao.propoe(new Lance(joao, new BigDecimal("1800.00")));
-        leilao.propoe(new Lance(maria, new BigDecimal("2100.00")));
+        leilao.propoe(new Lance(maria, 1500.00));
+        leilao.propoe(new Lance(joao, 1800.00));
+        leilao.propoe(new Lance(maria, 2100.00));
 
         Avaliador avaliador = new Avaliador();
         avaliador.avalia(leilao);
