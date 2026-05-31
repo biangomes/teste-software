@@ -60,5 +60,8 @@ public class Leilao {
             lance.setLeilao(this);
             this.lances.add(lance);
         }
+        if (lances.isEmpty() || !lances.get(lances.size() - 1).getUsuario().equals(lance.getUsuario())) {
+            lances.add(lance);
+        }
     }
 }

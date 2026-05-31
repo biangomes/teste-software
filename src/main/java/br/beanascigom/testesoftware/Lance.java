@@ -1,7 +1,5 @@
 package br.beanascigom.testesoftware;
 
-import java.math.BigDecimal;
-
 public class Lance {
 
     private double valor;
